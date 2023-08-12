@@ -42,4 +42,24 @@ So, the steps are as follows:
 
 ### How to make this work?
 
-_This section will be written a little bit later._
+_This section will be written a little bit later. Now it is work in progress_
+
+Scheme:
+
+* Windows machine
+  * Setup SSH
+  * Setup Picotool
+    * Setup MSYS2
+    * Build picotool
+    * Install WINUSB driver using zadig
+  * Copy-paste scripts into desired location. Setup config file.
+  * Dowload Thonny repository
+  * Copy-paste plugin "reupload_custom_firmware" into desired location. Setup config file.
+  * Build Thonny with the plugin
+* Linux server
+  * upload copy and build scripts into the server
+  * git clone the micropython repo into desired directory
+  * upload the build_automatically script
+  * upload the scripts config file and setup it
+  * install missing packages for building the micropython
+  * verify if build is executed correctly
