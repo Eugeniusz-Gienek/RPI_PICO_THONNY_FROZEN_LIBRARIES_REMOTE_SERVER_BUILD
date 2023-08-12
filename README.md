@@ -40,7 +40,7 @@ So, the steps are as follows:
 15. Then the plugin will restart Thonny's backend, which is equivalent to pressing the "Stop/Restart backend" button
 16. You have the RPI Pico with the firmware which encompasses Your libraries as frozen in the firmware. Enjoy!
 
-### How to make this work?
+## How to make this work?
 
 _This section will be written a little bit later. Now it is work in progress_
 
