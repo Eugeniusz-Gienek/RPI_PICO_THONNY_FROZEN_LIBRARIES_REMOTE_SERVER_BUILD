@@ -1,0 +1,9 @@
+{
+	"platform": "windows",
+	"local": {
+		"upload_script_location": "***WHERE_IS_FILE_upload_pico.bat_LOCATED_WHICH_UPLOADS_FILES_TO_REMOTE_SERVER***",
+		"build_script_location": "***WHERE_IS_FILE_build_pico.bat_LOCATED_WHICH_EXECUTES_BUILD_ON_REMOTE_SERVER***",
+		"picotool_location": "***WHERE_IS_PICOTOOL_LOCATED_FOR_EXAMPLE_C:/msys64/mingw64/bin/picotool.exe***",
+		"firmware_location":"***WHERE_FIRMWARE_FILE_firmware.uf2_WILL_BE_LOCATED_ON_LOCAL_PC_***"
+	}
+}
