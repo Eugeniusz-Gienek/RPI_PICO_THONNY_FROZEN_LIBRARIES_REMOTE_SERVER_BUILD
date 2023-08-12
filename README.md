@@ -4,6 +4,8 @@ The aim of this project is to automate the process of building Raspberry Pi Pico
 So, the end result is:
 In Thonny You have two additional buttons in the toolbar. One is "Upload to server" and another is "Build firmware on server". First one sends the library to the server where the firmware will be built in order to freeze it into the firmware, the second one builds the firmware and fully automatically downloads/uploads the firmware file from/to server AND then deploys it to raspberry pi pico. Convenient, isn't it?
 
+![Screenshot of Thonny buttons.](README_FILES/thonny_buttons.png)
+
 Now, let's get into the details.
 
 ## Process - under the hood
