@@ -39,3 +39,7 @@ So, the steps are as follows:
 14. After the upload, RPI Pico will reboot automatically. The plugin will wait for a couple of seconds while this happens
 15. Then the plugin will restart Thonny's backend, which is equivalent to pressing the "Stop/Restart backend" button
 16. You have the RPI Pico with the firmware which encompasses Your libraries as frozen in the firmware. Enjoy!
+
+### How to make this work?
+
+_This section will be written a little bit later._
