@@ -63,3 +63,5 @@ Scheme:
   * upload the scripts config file and setup it
   * install missing packages for building the micropython
   * verify if build is executed correctly
+
+Start Thonny by using the "thonny_start.bat" file. If You want to pin the start script to the taskbar and/or start menu (Windows 11), [here](https://www.windowsdigitals.com/pin-batch-file-or-cmd-admin-to-taskbar-in-windows-11/) is a good manual for that.
