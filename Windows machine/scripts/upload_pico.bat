@@ -13,10 +13,17 @@ set file1=%1
 set filesa=%filesa% %file1%
 shift
 echo [INFO] [%date% %time%] Copying file "%file1%" to remote server "%remote_server_url%".
+if exist  %file1% (
 scp %file1% %remote_server_user%@%remote_server_url%:%remote_server_upload_dir%
+) else (
+echo [ERROR] [%date% %time%] File "%file1%" DOES NOT EXIST!
+exit 2
+)
 if not "%~1"=="" goto loop
 
-for /r %%f in (%filesa%) do (
+echo [INFO] [%date% %time%] Done copying. Now going to execute the remote script of moving files...
+for %%f in (%filesa%) do (
+echo Setting "files" variable.
 set files=%%~nxf
 )
 
@@ -38,3 +45,4 @@ if %hours% lss 0 set /a hours = 24%hours%
 if 1%ms% lss 100 set ms=0%ms%
 set /a totalsecs = %hours%*3600 + %mins%*60 + %secs%
 echo [INFO] [%date% %time%] Files upload is complete. It took %hours%:%mins%:%secs%.%ms% (%totalsecs%.%ms%s total)
+exit 0
