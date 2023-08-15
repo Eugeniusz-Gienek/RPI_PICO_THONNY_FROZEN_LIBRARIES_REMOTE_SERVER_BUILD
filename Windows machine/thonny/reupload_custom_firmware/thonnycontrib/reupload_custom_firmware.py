@@ -26,9 +26,12 @@ def upl():
     if not filename:
         showinfo("Upload failed", "Cannot get filename from editor, thus cannot upload file.")
         return
-    sys_command(('{} "{} {}"' if(config['platform'] == 'windows') else '{} {} {}').format("cmd /c" if(config['platform'] == 'windows') else "/bin/sh",config['local']['upload_script_location'],filename))
+    res = sys_command(('{} "{} {}"' if(config['platform'] == 'windows') else '{} {} {}').format("cmd /c" if(config['platform'] == 'windows') else "/bin/sh",config['local']['upload_script_location'],filename))
     shell = get_shell()
-    shell.print_error("[REMOTE UPLOAD] Upload done.\n")
+    if(res != 0):
+        shell.print_error("[REMOTE UPLOAD] Upload NOT done - ERROR!\n")
+    else:
+        shell.print_error("[REMOTE UPLOAD] Upload done.\n")
     
 
 def bld():
@@ -39,9 +42,10 @@ def bld():
     runner = get_runner()
     shell.print_error("[REMOTE BUILD] Remote build done. Reboot into bootloader...\n")
     shell.submit_magic_command("import machine;machine.bootloader()")
+    do_sleep(config['local']['delay_before_flushing'])
     sys_command(('{} "{} load -x "{}""' if(config['platform'] == 'windows') else '{} {} load -x {}').format("cmd /c" if(config['platform'] == 'windows') else "/bin/sh", config['local']['picotool_location'], config['local']['firmware_location']))
     shell.print_error("[REMOTE BUILD] Firmware upload done.")
-    do_sleep(3)
+    do_sleep(config['local']['delay_before_backend_restart'])
     runner.restart_backend(clean=True)
 
 def load_plugin():
